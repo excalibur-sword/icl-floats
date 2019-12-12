@@ -85,7 +85,6 @@ int main(void) {
   const f80 x = F80_PI/40;
   printf("\nsinus<float_80> using Taylor series\n");
   SinTaylor(x);
-
   printf("\nsinus<double_float_80> using Taylor series\n");
   SinTaylor((df80)x);
 
