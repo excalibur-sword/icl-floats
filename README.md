@@ -1,5 +1,5 @@
-# icl-floats (pre-alpha version)
-float 80 bit &amp; double float 80 bit arithmetic
+# icl-floats (pre-alpha 64-bit version)
+float 80-bit &amp; double float 80-bit arithmetic
 ## System requirements
 Windows 7 or higher, 64-bit.
 ## Building the project
