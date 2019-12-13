@@ -41,11 +41,11 @@ f80 SinTaylor(const f80 &x) {
 
   f80 x2 = -x*x, s = x, t = x;
   double threshold = 0.5*Abs(x).ToDouble()*F64_EPS;
-  for (int i = 1; i < SIN_TAYLOR_SZ; ++i) {
-    t /= 2*i*(2*i + 1);
+  for (int i = 2; i < SIN_TAYLOR_SZ; i += 2) {
+    t /= i*(i + 1);
     t *= x2;
     s += t;
-    printf("%2d = %+1.14e\n", i, s.ToDouble());
+    printf("%2d = %+1.14e\n", i + 1, s.ToDouble());
     if (threshold > Abs(t).ToDouble()) break;
   }
   return s;
@@ -56,11 +56,11 @@ df80 SinTaylor(const df80 &x) {
 
   df80 x2 = -x*x, s = x, t = x;
   f80 threshold = 0.5*Abs(x.Hi())*F80_EPS;
-  for (int i = 1; i < SIN_TAYLOR_SZ; ++i) {
-    t /= 2*i*(2*i + 1);
+  for (int i = 2; i < SIN_TAYLOR_SZ; i += 2) {
+    t /= i*(i + 1);
     t *= x2;
     s += t;
-    printf("%2d = %+1.14e %+1.14e\n", i, s.Hi().ToDouble(), s.Lo().ToDouble());
+    printf("%2d = %+1.14e %+1.14e\n", i + 1, s.Hi().ToDouble(), s.Lo().ToDouble());
     if (threshold > Abs(t.Hi())) break;
   }
   return s;
