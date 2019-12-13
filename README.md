@@ -1,4 +1,4 @@
-# icl-floats (pre-alpha 64-bit version)
+# icl-floats (64-bit pre-alpha version)
 float 80-bit &amp; double float 80-bit arithmetic
 ## System requirements
 Windows 7 or higher, 64-bit.
